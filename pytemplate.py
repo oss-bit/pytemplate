@@ -178,7 +178,12 @@ def lex_node(source):
 
         current += char
         cursor +=1
-
+    if current:
+                tokens.append({
+                    'value': current,
+                    'type': 'literal',
+                })
+                current = ''
     return tokens
 
 
